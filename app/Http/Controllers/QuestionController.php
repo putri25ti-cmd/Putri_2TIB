@@ -38,9 +38,23 @@ class QuestionController extends Controller
             'email.email' => 'Email Tidak valid'
         ]);
 
-        $data['nama'] = $request->nama;
-        $data['email'] = $request->email;
-        $data['pertanyaan'] = $request->pertanyaan;
+        $pesanInfo = "Terimakasih <b>{$request->nama}</b>!
+        Pertanyaan ini: <b>{$request->pertanyaan}</b> akan segera direspon melalui email
+        <b>{$request->email}</b>";
+
+        return redirect('/home')->with('info', $pesanInfo);
+    }
+
+    /**
+     * Menampilkan halaman respon.
+     */
+    public function respon()
+    {
+        $data = session('respon_data');
+
+        if (!$data) {
+            return redirect('/home');
+        }
 
         return view('home-question-respon', $data);
     }

@@ -9,10 +9,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home',[HomeController::class,'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::post('question/store', [QuestionController::class, 'store'])
-		->name('question.store');
+    ->name('question.store');
 
 Route::get('dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
+
+Route::get('/question/respon', [QuestionController::class, 'respon'])
+    ->name('question.respon');
