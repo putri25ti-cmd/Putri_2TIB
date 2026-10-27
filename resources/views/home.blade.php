@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand font-custom" href="#">
+            <a class="navbar-brand" href="#">
                 <img src="{{ asset('assets/images/logo.avif') }}" alt="Logo"
                 width="30" height="24" class="d-inline-block align-text-top me-2">
                 My Laravel App
